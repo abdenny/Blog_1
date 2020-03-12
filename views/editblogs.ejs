@@ -3,9 +3,42 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Edit Blogs</title>
   </head>
   <body>
-    Edit Blogs
+    <nav>
+      <a href="/">Blogs</a>
+      <a href="/editblogs">Editblogs</a>
+    </nav>
+    <h1>Add a Blog</h1>
+
+    <form action="/editblogs" method="POST">
+      author:
+      <select name="author_id" id="">
+        <option>select author</option>
+
+        <% authors.forEach((record) => { %>
+        <option value="<%= record.id %>"><%= record.name %></option>
+        <% }) %> </select
+      ><br />
+
+      title: <input type="text" name="title" placeholder="title" /><br />
+
+      category:
+      <select name="category_id" id="">
+        <option>select category</option>
+
+        <% categories.forEach((record) => { %>
+        <option value="<%= record.id %>"><%= record.name %></option>
+        <% }) %> </select
+      ><br />
+
+      date published:
+      <input type="text" name="date_pub" placeholder="YYYY-MM-DD" /><br />
+
+      body: <input type="textbox" name="body" /><br />
+
+      <button type="submit">Submit Blog</button>
+    </form>
   </body>
 </html>

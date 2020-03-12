@@ -3,9 +3,21 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Homepage</title>
   </head>
   <body>
-    HOmepage
+    <nav>
+      <a href="/">Blogs</a>
+      <a href="/editblogs">Add a Blog</a>
+    </nav>
+    <h1>Blogs</h1>
+
+    <% blogs.forEach(record => { %>
+
+    <a href="/blogs/<%= record.id %>">
+      <h1><%= record.title %></h1>
+      <h6><%= record.date_pub %></h6>
+    </a>
+    <% }) %>
   </body>
 </html>
